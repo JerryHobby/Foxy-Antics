@@ -12,7 +12,13 @@ config_version=5
 
 config/name="Foxy Antics"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
 
 [rendering]
 
