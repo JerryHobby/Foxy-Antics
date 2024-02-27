@@ -4,6 +4,7 @@ class_name Player
 
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var debug_label = $DebugLabel
 
 
 const GRAVITY:float = 1000.0
@@ -27,16 +28,25 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	calculate_state()
+	var statetxt = PLAYER_STATE.find_key(_state)
+	debug_label.text = \
+	"Pos: %d:%d\nVel:%d:%d\nState:%s" \
+	% [position.x, position.y, velocity.x, velocity.y, statetxt]
 
 
 func get_input() -> void:
 	
 	velocity.x = 0
+	
+	if Input.is_action_just_pressed("debug"):
+		debug_label.visible = !debug_label.visible
 
 	if Input.is_action_pressed("left"):
 		velocity.x = -RUN_SPEED
+		sprite_2d.flip_h = true
 	elif Input.is_action_pressed("right"):
 		velocity.x = RUN_SPEED
+		sprite_2d.flip_h = false
 
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

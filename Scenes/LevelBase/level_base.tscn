@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://lvkc54a4e43x"]
+[gd_scene load_steps=7 format=3 uid="uid://lvkc54a4e43x"]
 
 [ext_resource type="Script" path="res://Scenes/LevelBase/level_base.gd" id="1_2kwnp"]
 [ext_resource type="TileSet" uid="uid://brcujfvt28bdl" path="res://assets/bg_tile_set.tres" id="1_pjscn"]
 [ext_resource type="Texture2D" uid="uid://canumk1i8cvrc" path="res://assets/backgrounds/platformer_background_4.png" id="2_ahy08"]
 [ext_resource type="PackedScene" uid="uid://cqhaa2l05p3me" path="res://Scenes/PlayerCam/player_cam.tscn" id="2_puia3"]
 [ext_resource type="PackedScene" uid="uid://b88455jynomql" path="res://Scenes/Player/player.tscn" id="3_d7dg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhy4x"]
 
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_2kwnp")
@@ -13,13 +15,13 @@ script = ExtResource("1_2kwnp")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -814.0
-offset_right = 1919.0
-offset_bottom = 266.0
+offset_left = -157.0
+offset_top = -850.0
+offset_right = 1763.0
+offset_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.920001, 0.759997)
+scale = Vector2(0.920001, 0.879999)
 texture = ExtResource("2_ahy08")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -34,3 +36,12 @@ zoom = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_d7dg1")]
 position = Vector2(487, -209)
+
+[node name="Floor" type="RigidBody2D" parent="."]
+position = Vector2(0, 36)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(706, -89)
+scale = Vector2(94.12, 1)
+shape = SubResource("RectangleShape2D_rhy4x")
