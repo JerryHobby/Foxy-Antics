@@ -11,7 +11,6 @@ var _fly_direction:Vector2 = Vector2.ZERO
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	velocity = _fly_direction
-	fly_to_player()
 	move_and_slide()
 
 
@@ -33,6 +32,7 @@ func fly_to_player() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	animated_sprite_2d.play("fly")
+	fly_to_player()
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

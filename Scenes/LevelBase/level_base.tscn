@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://lvkc54a4e43x"]
+[gd_scene load_steps=10 format=3 uid="uid://lvkc54a4e43x"]
 
 [ext_resource type="Script" path="res://Scenes/LevelBase/level_base.gd" id="1_2kwnp"]
 [ext_resource type="TileSet" uid="uid://brcujfvt28bdl" path="res://assets/bg_tile_set.tres" id="1_pjscn"]
 [ext_resource type="Texture2D" uid="uid://canumk1i8cvrc" path="res://assets/backgrounds/platformer_background_4.png" id="2_ahy08"]
 [ext_resource type="PackedScene" uid="uid://cqhaa2l05p3me" path="res://Scenes/PlayerCam/player_cam.tscn" id="2_puia3"]
 [ext_resource type="PackedScene" uid="uid://b88455jynomql" path="res://Scenes/Player/player.tscn" id="3_d7dg1"]
+[ext_resource type="PackedScene" uid="uid://cpi411ufjqtvm" path="res://Scenes/Enemies/snail.tscn" id="6_4dy2i"]
 [ext_resource type="PackedScene" uid="uid://cf4lipd2l5ish" path="res://Scenes/Enemies/eagle.tscn" id="6_joe82"]
+[ext_resource type="PackedScene" uid="uid://yk0rh4gvc2d" path="res://Scenes/Enemies/frog.tscn" id="7_oos1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhy4x"]
 
@@ -48,4 +50,12 @@ scale = Vector2(94.12, 1)
 shape = SubResource("RectangleShape2D_rhy4x")
 
 [node name="Eagle" parent="." instance=ExtResource("6_joe82")]
-position = Vector2(350, -451)
+position = Vector2(350, -496)
+
+[node name="Frog" parent="." instance=ExtResource("7_oos1g")]
+position = Vector2(726, -480)
+scale = Vector2(0.75, 0.75)
+
+[node name="Snail" parent="." instance=ExtResource("6_4dy2i")]
+position = Vector2(175, -193)
+scale = Vector2(0.75, 0.75)
