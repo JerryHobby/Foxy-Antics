@@ -5,6 +5,7 @@ class_name Player
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var debug_label = $DebugLabel
+@onready var sound_player = $SoundPlayer
 
 
 const GRAVITY:float = 1000.0
@@ -30,8 +31,8 @@ func _physics_process(delta):
 	calculate_state()
 	var statetxt = PLAYER_STATE.find_key(_state)
 	debug_label.text = \
-	"Pos: %d:%d\nVel:%d:%d\nState:%s" \
-	% [position.x, position.y, velocity.x, velocity.y, statetxt]
+	"Floor: %s\nPos: %d, %d\nVel:%d, %d\nState:%s" \
+	% [is_on_floor(), position.x, position.y, velocity.x, velocity.y, statetxt]
 
 
 func get_input() -> void:
@@ -49,6 +50,7 @@ func get_input() -> void:
 		sprite_2d.flip_h = false
 
 	if Input.is_action_pressed("jump") and is_on_floor():
+		SoundManager.play_clip(sound_player, SoundManager.SOUND_JUMP)
 		velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_pressed("shoot"):
@@ -73,11 +75,16 @@ func calculate_state() -> void:
 			set_state(PLAYER_STATE.JUMP)
 
 
-func set_state(state: PLAYER_STATE) -> void:
-	if state == _state:
+func set_state(new_state: PLAYER_STATE) -> void:
+	if new_state == _state:
 		return
-		
-	_state = state
+	
+	if _state == PLAYER_STATE.FALL:
+		if new_state == PLAYER_STATE.RUN \
+		or new_state == PLAYER_STATE.IDLE:
+			SoundManager.play_clip(sound_player, SoundManager.SOUND_LAND)
+	
+	_state = new_state
 	
 	match _state:
 		PLAYER_STATE.IDLE:
