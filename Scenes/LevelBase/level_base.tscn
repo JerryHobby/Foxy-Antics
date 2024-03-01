@@ -37,9 +37,6 @@ layer_0/tile_data = PackedInt32Array(-65536, 458752, 1, -65535, 458752, 1, -6553
 position = Vector2(256, -147)
 zoom = Vector2(2, 2)
 
-[node name="Player" parent="." instance=ExtResource("3_d7dg1")]
-position = Vector2(414, -351)
-
 [node name="Floor" type="RigidBody2D" parent="."]
 position = Vector2(0, 36)
 freeze = true
@@ -49,13 +46,14 @@ position = Vector2(706, -89)
 scale = Vector2(94.12, 1)
 shape = SubResource("RectangleShape2D_rhy4x")
 
-[node name="Eagle" parent="." instance=ExtResource("6_joe82")]
-position = Vector2(350, -496)
+[node name="Player" parent="." instance=ExtResource("3_d7dg1")]
+position = Vector2(161, -203)
 
-[node name="Frog" parent="." instance=ExtResource("7_oos1g")]
-position = Vector2(726, -480)
-scale = Vector2(0.75, 0.75)
+[node name="Eagle" parent="." instance=ExtResource("6_joe82")]
+position = Vector2(316, -494)
 
 [node name="Snail" parent="." instance=ExtResource("6_4dy2i")]
-position = Vector2(175, -193)
-scale = Vector2(0.75, 0.75)
+position = Vector2(313, -145)
+
+[node name="Frog" parent="." instance=ExtResource("7_oos1g")]
+position = Vector2(410, -339)

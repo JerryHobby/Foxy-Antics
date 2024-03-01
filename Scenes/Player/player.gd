@@ -6,6 +6,7 @@ class_name Player
 @onready var animation_player = $AnimationPlayer
 @onready var debug_label = $DebugLabel
 @onready var sound_player = $SoundPlayer
+@onready var shooter = $Shooter
 
 
 const GRAVITY:float = 1000.0
@@ -53,10 +54,17 @@ func get_input() -> void:
 		SoundManager.play_clip(sound_player, SoundManager.SOUND_JUMP)
 		velocity.y = JUMP_VELOCITY
 		
-	if Input.is_action_pressed("shoot"):
-		pass
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 
 	velocity.y = clampf(velocity.y, JUMP_VELOCITY, MAX_FALL_SPEED)
+
+
+func shoot() -> void:
+	if sprite_2d.flip_h == true:
+		shooter.shoot(Vector2.LEFT)
+	else:
+		shooter.shoot(Vector2.RIGHT)
 
 
 func calculate_state() -> void:
@@ -98,3 +106,7 @@ func set_state(new_state: PLAYER_STATE) -> void:
 		PLAYER_STATE.FALL:
 			animation_player.play("fall")
 
+
+
+func _on_hit_box_area_entered(area):
+	print("Player HitBox: ", area)

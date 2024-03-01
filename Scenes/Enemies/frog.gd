@@ -15,11 +15,11 @@ func _ready():
 	start_timer()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	super._physics_process(delta)
+func _physics_process(_delta):
+	super._physics_process(_delta)
 
 	if is_on_floor() == false:
-		velocity.y += _gravity * delta
+		velocity.y += _gravity * _delta
 	else:
 		velocity.x = 0
 		animated_sprite_2d.play("idle")
