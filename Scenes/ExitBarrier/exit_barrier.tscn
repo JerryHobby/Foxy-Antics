@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi66kdqa5clnc"]
+
+[ext_resource type="Texture2D" uid="uid://blqs6rlmn2wbc" path="res://assets/backgrounds/Yellow.png" id="1_6g4ph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5ahx"]
+size = Vector2(6, 1279)
+
+[node name="ExitBarrier" type="RigidBody2D"]
+position = Vector2(0, -330)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 20)
+texture = ExtResource("1_6g4ph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_t5ahx")

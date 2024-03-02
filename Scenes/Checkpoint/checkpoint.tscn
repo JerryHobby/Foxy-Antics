@@ -187,4 +187,6 @@ parameters/conditions/on_trigger = false
 position = Vector2(12, -23)
 shape = SubResource("RectangleShape2D_fp86b")
 
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

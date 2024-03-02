@@ -42,12 +42,12 @@ func set_invincible(value:bool) -> void:
 	animation_tree[HIT_CONDITION] = value
 
 
-func _on_trigger_area_entered(area):
+func _on_trigger_area_entered(_area):
 	if animation_tree[TRIGGER_CONDITION] == false:
 		animation_tree[TRIGGER_CONDITION] = true
 
 
-func _on_hit_box_area_entered(area):
+func _on_hit_box_area_entered(_area):
 	take_damage()
 
 

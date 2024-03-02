@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://4xq8phbi2axw"]
+
+[ext_resource type="Script" path="res://Scenes/BallSpikes/ball_spikes.gd" id="1_3w7wj"]
+[ext_resource type="Texture2D" uid="uid://dtp8cl5dyhvkc" path="res://assets/danger/spiked_ball.png" id="1_a7b7m"]
+
+[sub_resource type="Animation" id="Animation_os8wh"]
+resource_name = "rotate"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitBox/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_s2ykg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitBox/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spe31"]
+_data = {
+"RESET": SubResource("Animation_s2ykg"),
+"rotate": SubResource("Animation_os8wh")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_osskl"]
+
+[node name="BallSpikes" type="PathFollow2D"]
+script = ExtResource("1_3w7wj")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="HitBox"]
+texture = ExtResource("1_a7b7m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HitBox"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_spe31")
+}
+autoplay = "rotate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_osskl")

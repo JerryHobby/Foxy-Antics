@@ -73,6 +73,7 @@ debug={
 2d_physics/layer_3="enemy_hit_box"
 2d_physics/layer_4="player_bullet"
 2d_physics/layer_5="enemy_bullet"
+2d_physics/layer_6="player_physics"
 
 [rendering]
 

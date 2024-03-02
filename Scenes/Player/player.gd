@@ -137,7 +137,7 @@ func apply_hit() -> void:
 	set_state(PLAYER_STATE.HURT)
 
 
-func _on_hit_box_area_entered(area):
+func _on_hit_box_area_entered(_area):
 	apply_hit()
 
 

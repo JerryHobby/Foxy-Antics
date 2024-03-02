@@ -3,13 +3,15 @@ extends Node2D
 @onready var player = $Player
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalManager.on_boss_killed.connect(on_boss_killed)
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func on_boss_killed(_p) -> void:
+	#exit_barrier.queue_free()
 	pass
 
 
