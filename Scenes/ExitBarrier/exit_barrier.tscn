@@ -7,6 +7,7 @@ size = Vector2(6, 1279)
 
 [node name="ExitBarrier" type="RigidBody2D"]
 position = Vector2(0, -330)
+freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 20)

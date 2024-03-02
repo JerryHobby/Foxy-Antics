@@ -1,6 +1,7 @@
 extends Node2D
 @onready var player_cam = $PlayerCam
 @onready var player = $Player
+@onready var exit_barrier = $ExitBarrier
 
 
 
@@ -11,7 +12,7 @@ func _ready():
 
 
 func on_boss_killed(_p) -> void:
-	#exit_barrier.queue_free()
+	exit_barrier.queue_free()
 	pass
 
 

@@ -16,6 +16,7 @@ func _process(_delta):
 
 
 func _on_area_entered(_area):
+	SignalManager.on_checkpoint.emit(global_position)
 	queue_free()
 
 

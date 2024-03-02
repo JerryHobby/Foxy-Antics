@@ -22,10 +22,12 @@ const HURT_JUMP_VELOCITY:Vector2 = Vector2(0, -150)
 enum PLAYER_STATE {IDLE, RUN, JUMP, FALL, HURT}
 var _state:PLAYER_STATE = PLAYER_STATE.IDLE
 var _invincible:bool = false
+var _reset_position:Vector2
 
 
 func _ready():
-	pass
+	_reset_position = global_position
+	SignalManager.on_checkpoint.connect(on_checkpoint)
 
 
 func _physics_process(delta):
@@ -135,6 +137,7 @@ func apply_hit() -> void:
 	apply_hurt_jump()
 	SoundManager.play_clip(sound_player, SoundManager.SOUND_DAMAGE)
 	set_state(PLAYER_STATE.HURT)
+	global_position = _reset_position
 
 
 func _on_hit_box_area_entered(_area):
@@ -150,3 +153,6 @@ func _on_invincible_timer_timeout():
 func _on_hurt_timer_timeout():
 		set_state(PLAYER_STATE.IDLE)
 
+
+func on_checkpoint(position):
+	_reset_position = global_position
