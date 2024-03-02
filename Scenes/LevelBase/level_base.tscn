@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lvkc54a4e43x"]
+[gd_scene load_steps=12 format=3 uid="uid://lvkc54a4e43x"]
 
 [ext_resource type="Script" path="res://Scenes/LevelBase/level_base.gd" id="1_2kwnp"]
 [ext_resource type="TileSet" uid="uid://brcujfvt28bdl" path="res://assets/bg_tile_set.tres" id="1_pjscn"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cpi411ufjqtvm" path="res://Scenes/Enemies/snail.tscn" id="6_4dy2i"]
 [ext_resource type="PackedScene" uid="uid://cf4lipd2l5ish" path="res://Scenes/Enemies/eagle.tscn" id="6_joe82"]
 [ext_resource type="PackedScene" uid="uid://yk0rh4gvc2d" path="res://Scenes/Enemies/frog.tscn" id="7_oos1g"]
+[ext_resource type="PackedScene" uid="uid://tbf5gyfsa8gk" path="res://Scenes/Boss/boss.tscn" id="9_6klfx"]
+[ext_resource type="PackedScene" uid="uid://dob21ty2r8cnf" path="res://Scenes/Checkpoint/checkpoint.tscn" id="10_8vp4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhy4x"]
 
@@ -57,3 +59,10 @@ position = Vector2(313, -145)
 
 [node name="Frog" parent="." instance=ExtResource("7_oos1g")]
 position = Vector2(410, -339)
+
+[node name="Boss" parent="." instance=ExtResource("9_6klfx")]
+position = Vector2(674, -140)
+lives = 1
+
+[node name="Checkpoint" parent="." instance=ExtResource("10_8vp4i")]
+position = Vector2(642, -139)
