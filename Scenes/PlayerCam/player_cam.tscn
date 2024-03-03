@@ -3,4 +3,13 @@
 [ext_resource type="Script" path="res://Scenes/PlayerCam/player_cam.gd" id="1_12jgk"]
 
 [node name="PlayerCam" type="Camera2D"]
+limit_left = -1000000
+limit_top = -800
+limit_bottom = 0
 script = ExtResource("1_12jgk")
+
+[node name="ShakeTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]

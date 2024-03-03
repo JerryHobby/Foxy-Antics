@@ -13,9 +13,9 @@ class_name Player
 
 
 const GRAVITY:float = 1000.0
-const RUN_SPEED:float = 320.0 # 120
+const RUN_SPEED:float = 120
 const MAX_FALL_SPEED:float = 400.0
-const JUMP_VELOCITY:float = -400.0
+const JUMP_VELOCITY:float = -350.0
 const HURT_JUMP_VELOCITY:Vector2 = Vector2(0, -150)
 
 
@@ -109,7 +109,7 @@ func set_state(new_state: PLAYER_STATE) -> void:
 		PLAYER_STATE.RUN:
 			animation_player.play("run")
 		PLAYER_STATE.HURT:
-			animation_player.play("hurt")
+			apply_hurt_jump()
 		PLAYER_STATE.JUMP:
 			animation_player.play("jump")
 		PLAYER_STATE.FALL:
@@ -123,10 +123,10 @@ func go_invincible() -> void:
 
 
 func apply_hurt_jump() -> void:
-	set_state(PLAYER_STATE.HURT)
 	animation_player.play("hurt")
 	velocity = HURT_JUMP_VELOCITY
 	hurt_timer.start()
+	SignalManager.on_player_hit.emit(0)
 
 
 func apply_hit() -> void:
@@ -134,10 +134,9 @@ func apply_hit() -> void:
 		return
 		
 	go_invincible()
-	apply_hurt_jump()
 	SoundManager.play_clip(sound_player, SoundManager.SOUND_DAMAGE)
 	set_state(PLAYER_STATE.HURT)
-	global_position = _reset_position
+	#global_position = _reset_position
 
 
 func _on_hit_box_area_entered(_area):
@@ -151,7 +150,7 @@ func _on_invincible_timer_timeout():
 
 
 func _on_hurt_timer_timeout():
-		set_state(PLAYER_STATE.IDLE)
+	set_state(PLAYER_STATE.IDLE)
 
 
 func on_checkpoint(_position):
