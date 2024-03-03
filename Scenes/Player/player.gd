@@ -13,7 +13,7 @@ class_name Player
 
 
 const GRAVITY:float = 1000.0
-const RUN_SPEED:float = 120.0
+const RUN_SPEED:float = 320.0 # 120
 const MAX_FALL_SPEED:float = 400.0
 const JUMP_VELOCITY:float = -400.0
 const HURT_JUMP_VELOCITY:Vector2 = Vector2(0, -150)
@@ -44,7 +44,7 @@ func _physics_process(delta):
 
 
 func get_input() -> void:
-	if _state == PLAYER_STATE.HURT:
+	if _state == PLAYER_STATE.HURT or _invincible:
 		return
 	
 	velocity.x = 0
@@ -154,5 +154,5 @@ func _on_hurt_timer_timeout():
 		set_state(PLAYER_STATE.IDLE)
 
 
-func on_checkpoint(position):
+func on_checkpoint(_position):
 	_reset_position = global_position
