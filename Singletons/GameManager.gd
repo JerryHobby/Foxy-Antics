@@ -37,6 +37,7 @@ func load_level_scenes():
 
 func load_main_scene():
 	_current_level = 0
+	_current_lives = TOTAL_LIVES
 	get_tree().change_scene_to_packed(MAIN_SCENE)
 
 

@@ -217,7 +217,7 @@ libraries = {
 }
 
 [node name="InvincibleTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="HurtTimer" type="Timer" parent="."]

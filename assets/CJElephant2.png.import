@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkhpge1852tye"
-path="res://.godot/imported/CJElephant2.png-a8fb89cd352627737c85a1383fb3132e.ctex"
+uid="uid://ba1kp5hhk3mf4"
+path="res://.godot/imported/CJElephant2.png-23f4366ae5219d4680291b0edf782cb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CJElephant2.png"
-dest_files=["res://.godot/imported/CJElephant2.png-a8fb89cd352627737c85a1383fb3132e.ctex"]
+source_file="res://assets/CJElephant2.png"
+dest_files=["res://.godot/imported/CJElephant2.png-23f4366ae5219d4680291b0edf782cb2.ctex"]
 
 [params]
 

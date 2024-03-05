@@ -47,9 +47,12 @@ func _physics_process(delta):
 
 
 func get_input() -> void:
-	if _state == PLAYER_STATE.HURT or _invincible:
+	if _state == PLAYER_STATE.HURT:
 		return
-	
+		
+	#if _invincible:
+		#return
+	#
 	velocity.x = 0
 
 	if Input.is_action_just_pressed("god_mode"):

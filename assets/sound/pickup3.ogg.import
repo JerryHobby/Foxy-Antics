@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/pickup3.ogg-7f2a44e52e06cfbbb85331b19bac75cf.
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

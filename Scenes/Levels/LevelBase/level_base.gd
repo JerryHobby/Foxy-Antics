@@ -4,7 +4,6 @@ extends Node2D
 @onready var exit_barrier = $ExitBarrier
 @onready var music = $Music
 
-
 var _level_accelerator:float
 
 # Called when the node enters the scene tree for the first time.
@@ -26,7 +25,6 @@ func _process(_delta):
 	player_cam.position = player.position
 	if Input.is_action_just_pressed("escape"):
 		GameManager.load_next_level_scene()
-
 
 
 func on_boss_killed(_p) -> void:
