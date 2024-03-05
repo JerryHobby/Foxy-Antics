@@ -11,7 +11,6 @@ class_name Player
 @onready var invincible_timer = $InvincibleTimer
 @onready var hurt_timer = $HurtTimer
 
-
 const GRAVITY:float = 1000.0
 const FALLEN_OFF:float = 100
 const RUN_SPEED:float = 120
@@ -24,17 +23,15 @@ enum PLAYER_STATE {IDLE, RUN, JUMP, FALL, HURT}
 var _state:PLAYER_STATE = PLAYER_STATE.IDLE
 var _invincible:bool = false
 var _reset_position:Vector2
-var _lives:int = GameManager.TOTAL_LIVES
 
 
 func _ready():
 	_reset_position = global_position
 	SignalManager.on_checkpoint.connect(on_checkpoint)
-	SignalManager.on_player_hit.emit(_lives)
+	SignalManager.on_player_hit.emit(GameManager.get_lives_remaining())
 
-
-func _physics_process(delta):
 	
+func _physics_process(delta):
 	fallen_off()
 	
 	if is_on_floor() == false:
@@ -54,7 +51,9 @@ func get_input() -> void:
 		return
 	
 	velocity.x = 0
-	
+
+	if Input.is_action_just_pressed("god_mode"):
+		GameManager.set_god_mode(!GameManager.get_god_mode())
 	if Input.is_action_just_pressed("debug"):
 		debug_label.visible = !debug_label.visible
 
@@ -131,14 +130,15 @@ func go_invincible() -> void:
 func fallen_off() -> void:
 	if global_position.y < FALLEN_OFF:
 		return
-	_lives = 1
+	GameManager.set_lives_remaining(1)
 	reduce_lives()
 
 
 func reduce_lives() -> bool:
-	_lives -= 1
-	SignalManager.on_player_hit.emit(_lives)
-	if _lives > 0:
+	var lives = GameManager.get_lives_remaining() - 1
+	GameManager.set_lives_remaining(lives)
+	SignalManager.on_player_hit.emit(lives)
+	if lives > 0:
 		return true
 	
 	SignalManager.on_game_over.emit()
@@ -152,11 +152,13 @@ func apply_hurt_jump() -> void:
 	hurt_timer.start()
 
 
-
 func apply_hit() -> void:
 	if _invincible == true:
 		return
 	
+	if GameManager.get_god_mode():
+		return
+		
 	if reduce_lives() == false: #dead
 		return
 		

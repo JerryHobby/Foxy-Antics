@@ -5,9 +5,17 @@ extends Node2D
 @onready var music = $Music
 
 
+var _level_accelerator:float
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Engine.time_scale = 1
+	get_tree().paused = false
+	_level_accelerator = (GameManager.get_current_level() - 1) * GameManager.LEVEL_ACCELERATOR
+	if _level_accelerator >= GameManager.MAX_LEVEL_ACCELERATOR:
+		_level_accelerator = GameManager.MAX_LEVEL_ACCELERATOR
+	
+	print("Level Speed: ", 1 + _level_accelerator)
+	Engine.time_scale = 1 + _level_accelerator
 	
 	SignalManager.on_boss_killed.connect(on_boss_killed)
 	if GameManager.music:

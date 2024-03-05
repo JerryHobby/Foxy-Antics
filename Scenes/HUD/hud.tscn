@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://vf5p81tl0ggg"]
+[gd_scene load_steps=7 format=3 uid="uid://vf5p81tl0ggg"]
 
 [ext_resource type="LabelSettings" uid="uid://s3sm4fyfisfb" path="res://assets/gl_48_white.tres" id="1_2d307"]
 [ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_opq5i"]
 [ext_resource type="Texture2D" uid="uid://b30jnl4k3g373" path="res://assets/items/pixel heart 2.png" id="2_xe7ht"]
+[ext_resource type="LabelSettings" uid="uid://dhjefeuokirp5" path="res://assets/gl_48_red.tres" id="3_eggbf"]
 [ext_resource type="LabelSettings" uid="uid://b6im8v613v11m" path="res://assets/lg_64_blue.tres" id="3_t1lxt"]
 [ext_resource type="LabelSettings" uid="uid://bvchhie7ul4f7" path="res://assets/lg_24_lightblue.tres" id="4_kmydm"]
 
 [node name="HUD" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +30,9 @@ theme_override_constants/margin_bottom = 12
 
 [node name="HBoxScore" type="HBoxContainer" parent="MCScoreBar"]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_constants/separation = 30
 
 [node name="ScoreLabel" type="Label" parent="MCScoreBar/HBoxScore"]
 layout_mode = 2
@@ -36,6 +40,14 @@ size_flags_horizontal = 2
 text = "0000
 "
 label_settings = ExtResource("1_2d307")
+
+[node name="LabelGodMode" type="Label" parent="MCScoreBar/HBoxScore"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+text = "GOD
+"
+label_settings = ExtResource("3_eggbf")
 
 [node name="HBoxLevel" type="HBoxContainer" parent="MCScoreBar"]
 layout_mode = 2

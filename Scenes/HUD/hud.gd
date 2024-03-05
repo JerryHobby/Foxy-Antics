@@ -5,6 +5,7 @@ extends Control
 @onready var vb_game_over = $ColorRect/VB_GameOver
 @onready var h_box_hearts = $MCScoreBar/HBoxHearts
 @onready var score_label = $MCScoreBar/HBoxScore/ScoreLabel
+@onready var label_god_mode = $MCScoreBar/HBoxScore/LabelGodMode
 
 
 var _hearts:Array
@@ -15,14 +16,13 @@ func _ready():
 	SignalManager.on_level_complete.connect(on_level_complete)
 	SignalManager.on_game_over.connect(on_game_over)
 	SignalManager.on_player_hit.connect(on_player_hit)
-	
+	SignalManager.on_score_updated.connect(on_score_updated)
+	SignalManager.on_god_mode.connect(on_god_mode)
 	_hearts = h_box_hearts.get_children()
-	score_label.text = str(ScoreManager.get_score())
+	on_score_updated()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	score_label.text = str(ScoreManager.get_score())
-		
 	if vb_level_complete.visible == true:
 		if Input.is_action_just_pressed("jump"):
 			hide_hud()
@@ -33,6 +33,9 @@ func _process(delta):
 			hide_hud()
 			GameManager.load_main_scene()
 
+func on_score_updated() -> void:
+	score_label.text = str(ScoreManager.get_score()).lpad(5, "0")
+
 
 func on_player_hit(lives):
 	for life in GameManager.TOTAL_LIVES:
@@ -40,8 +43,12 @@ func on_player_hit(lives):
 
 
 func show_hud():
-	Engine.time_scale = 0
+	get_tree().paused = true
 	color_rect.show()
+
+
+func on_god_mode(mode:bool) -> void:
+	label_god_mode.visible = mode
 
 
 func hide_hud():
