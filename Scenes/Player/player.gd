@@ -13,6 +13,7 @@ class_name Player
 
 
 const GRAVITY:float = 1000.0
+const FALLEN_OFF:float = 100
 const RUN_SPEED:float = 120
 const MAX_FALL_SPEED:float = 400.0
 const JUMP_VELOCITY:float = -350.0
@@ -23,14 +24,19 @@ enum PLAYER_STATE {IDLE, RUN, JUMP, FALL, HURT}
 var _state:PLAYER_STATE = PLAYER_STATE.IDLE
 var _invincible:bool = false
 var _reset_position:Vector2
+var _lives:int = GameManager.TOTAL_LIVES
 
 
 func _ready():
 	_reset_position = global_position
 	SignalManager.on_checkpoint.connect(on_checkpoint)
+	SignalManager.on_player_hit.emit(_lives)
 
 
 func _physics_process(delta):
+	
+	fallen_off()
+	
 	if is_on_floor() == false:
 		velocity.y += GRAVITY * delta
 
@@ -122,15 +128,36 @@ func go_invincible() -> void:
 	invincible_timer.start()
 
 
+func fallen_off() -> void:
+	if global_position.y < FALLEN_OFF:
+		return
+	_lives = 1
+	reduce_lives()
+
+
+func reduce_lives() -> bool:
+	_lives -= 1
+	SignalManager.on_player_hit.emit(_lives)
+	if _lives > 0:
+		return true
+	
+	SignalManager.on_game_over.emit()
+	set_physics_process(false)
+	return false
+
+
 func apply_hurt_jump() -> void:
 	animation_player.play("hurt")
 	velocity = HURT_JUMP_VELOCITY
 	hurt_timer.start()
-	SignalManager.on_player_hit.emit(0)
+
 
 
 func apply_hit() -> void:
 	if _invincible == true:
+		return
+	
+	if reduce_lives() == false: #dead
 		return
 		
 	go_invincible()

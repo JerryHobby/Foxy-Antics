@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://lvkc54a4e43x"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/LevelBase/level_base.gd" id="1_2kwnp"]
+[ext_resource type="TileSet" uid="uid://brcujfvt28bdl" path="res://assets/bg_tile_set.tres" id="1_pjscn"]
+[ext_resource type="PackedScene" uid="uid://dld2xnhl5elji" path="res://Scenes/ScrollingBG/scrolling_bg.tscn" id="2_0rgsx"]
+[ext_resource type="PackedScene" uid="uid://cqhaa2l05p3me" path="res://Scenes/PlayerCam/player_cam.tscn" id="2_puia3"]
+[ext_resource type="PackedScene" uid="uid://b88455jynomql" path="res://Scenes/Player/player.tscn" id="3_d7dg1"]
+[ext_resource type="PackedScene" uid="uid://bi66kdqa5clnc" path="res://Scenes/ExitBarrier/exit_barrier.tscn" id="6_jblx4"]
+[ext_resource type="PackedScene" uid="uid://tbf5gyfsa8gk" path="res://Scenes/Boss/boss.tscn" id="9_ljh2n"]
+[ext_resource type="PackedScene" uid="uid://dob21ty2r8cnf" path="res://Scenes/Checkpoint/checkpoint.tscn" id="10_ndwt6"]
+[ext_resource type="AudioStream" uid="uid://cyv7esyhc7f74" path="res://assets/sound/Flowing Rocks.ogg" id="13_to7hd"]
+[ext_resource type="PackedScene" uid="uid://vf5p81tl0ggg" path="res://Scenes/HUD/hud.tscn" id="14_i78d2"]
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_2kwnp")
+
+[node name="ScrollingBG" parent="." instance=ExtResource("2_0rgsx")]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(25, -11)
+tile_set = ExtResource("1_pjscn")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65538, 458752, 65536, -65537, 458752, 65536, -131072, 458752, 65536, -131071, 458752, 65536, 2, 458752, 65536, 3, 458752, 65536, 4, 458752, 65536, 5, 458752, 65536, 6, 458752, 65536, 7, 458752, 65536, 8, 458752, 65536, 9, 458752, 65536, 10, 458752, 65536, 11, 458752, 65536, 12, 458752, 65536, 13, 458752, 65536, 14, 458752, 65536, 15, 458752, 65536, 16, 458752, 65536, 17, 458752, 65536)
+
+[node name="Boss" parent="TileMap" instance=ExtResource("9_ljh2n")]
+position = Vector2(266, 0)
+
+[node name="PlayerCam" parent="." instance=ExtResource("2_puia3")]
+zoom = Vector2(2, 2)
+limit_left = -2500
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_to7hd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("14_i78d2")]
+
+[node name="Checkpoint" parent="." instance=ExtResource("10_ndwt6")]
+position = Vector2(234, -11)
+
+[node name="ExitBarrier" parent="." instance=ExtResource("6_jblx4")]
+position = Vector2(315, -339)
+
+[node name="Player" parent="." instance=ExtResource("3_d7dg1")]
+position = Vector2(20, -59)

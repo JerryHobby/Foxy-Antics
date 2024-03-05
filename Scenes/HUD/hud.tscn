@@ -1,0 +1,153 @@
+[gd_scene load_steps=6 format=3 uid="uid://vf5p81tl0ggg"]
+
+[ext_resource type="LabelSettings" uid="uid://s3sm4fyfisfb" path="res://assets/gl_48_white.tres" id="1_2d307"]
+[ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_opq5i"]
+[ext_resource type="Texture2D" uid="uid://b30jnl4k3g373" path="res://assets/items/pixel heart 2.png" id="2_xe7ht"]
+[ext_resource type="LabelSettings" uid="uid://b6im8v613v11m" path="res://assets/lg_64_blue.tres" id="3_t1lxt"]
+[ext_resource type="LabelSettings" uid="uid://bvchhie7ul4f7" path="res://assets/lg_24_lightblue.tres" id="4_kmydm"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_opq5i")
+
+[node name="MCScoreBar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxScore" type="HBoxContainer" parent="MCScoreBar"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ScoreLabel" type="Label" parent="MCScoreBar/HBoxScore"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "0000
+"
+label_settings = ExtResource("1_2d307")
+
+[node name="HBoxLevel" type="HBoxContainer" parent="MCScoreBar"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LabelLevel" type="Label" parent="MCScoreBar/HBoxLevel"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level 1"
+label_settings = ExtResource("1_2d307")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxHearts" type="HBoxContainer" parent="MCScoreBar"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="L1" type="TextureRect" parent="MCScoreBar/HBoxHearts"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_xe7ht")
+
+[node name="L2" type="TextureRect" parent="MCScoreBar/HBoxHearts"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_xe7ht")
+
+[node name="L3" type="TextureRect" parent="MCScoreBar/HBoxHearts"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_xe7ht")
+
+[node name="L4" type="TextureRect" parent="MCScoreBar/HBoxHearts"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_xe7ht")
+
+[node name="L5" type="TextureRect" parent="MCScoreBar/HBoxHearts"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_xe7ht")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.00392157, 0.0980392, 0.447059)
+
+[node name="VB_LevelComplete" type="VBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VB_LevelComplete"]
+layout_mode = 2
+text = "LEVEL COMPLETE!"
+label_settings = ExtResource("3_t1lxt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VB_LevelComplete"]
+layout_mode = 2
+text = "Press Jump for Next Level"
+label_settings = ExtResource("4_kmydm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VB_GameOver" type="VBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VB_GameOver"]
+layout_mode = 2
+text = "GAME OVER!"
+label_settings = ExtResource("3_t1lxt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VB_GameOver"]
+layout_mode = 2
+text = "Press Jump For Main Menu"
+label_settings = ExtResource("4_kmydm")
+horizontal_alignment = 1
+vertical_alignment = 1

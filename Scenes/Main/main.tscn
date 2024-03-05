@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://0voo6767wt3s"]
+
+[ext_resource type="Texture2D" uid="uid://canumk1i8cvrc" path="res://assets/backgrounds/platformer_background_4.png" id="1_1s7b8"]
+[ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_apg8k"]
+[ext_resource type="LabelSettings" uid="uid://bevadlt1a6a84" path="res://assets/lg_96_blue.tres" id="2_s4bgn"]
+[ext_resource type="FontFile" uid="uid://wqngsxortibx" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_4fc2a"]
+[ext_resource type="AudioStream" uid="uid://b2e0rac3ftxda" path="res://assets/sound/Farm Frolics.ogg" id="4_exipn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j7q30"]
+font = ExtResource("3_4fc2a")
+font_size = 32
+font_color = Color(0.647059, 0.862745, 0.996078, 1)
+outline_size = 3
+outline_color = Color(0.027451, 0.917647, 0.564706, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.827451)
+
+[node name="Main" type="CanvasLayer"]
+script = ExtResource("1_apg8k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1s7b8")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="LabelTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "FOXY ANTICS
+"
+label_settings = ExtResource("2_s4bgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelHighScore" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "High Score: 0000
+"
+label_settings = SubResource("LabelSettings_j7q30")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_exipn")

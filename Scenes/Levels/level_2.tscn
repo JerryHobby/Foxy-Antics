@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buomegbb3okgg"]
+
+[ext_resource type="PackedScene" uid="uid://lvkc54a4e43x" path="res://Scenes/Levels/LevelBase/level_base.tscn" id="1_m1dlf"]
+
+[node name="Level_2" instance=ExtResource("1_m1dlf")]
+
+[node name="ScrollingBG" parent="." index="0"]
+level_number = 2
