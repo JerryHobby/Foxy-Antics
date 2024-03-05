@@ -10,7 +10,7 @@ const FRUITS:Array = [
 
 const GRAVITY:float = 200.0
 const JUMP:float = -100.0
-const POINTS:int = 2
+const POINTS:int = ScoreManager.FRUIT_POINTS
 
 var _start_y:float
 var _speed_y:float = JUMP

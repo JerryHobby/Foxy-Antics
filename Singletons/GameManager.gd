@@ -41,5 +41,6 @@ func load_next_level_scene():
 func set_next_level():
 	_current_level += 1
 	if _current_level > TOTAL_LEVELS:
+		_current_level = 1
 		SignalManager.on_game_over.emit()
 

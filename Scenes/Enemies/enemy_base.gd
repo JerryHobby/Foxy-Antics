@@ -4,7 +4,7 @@ class_name EnemyBase
 
 enum FACING { LEFT = -1, RIGHT = 1 }
 @export var default_facing = FACING.LEFT
-@export var points:int = 1
+@export var points:int = ScoreManager.ENEMY_POINTS
 @export var speed:float = 30.0
 
 

@@ -27,7 +27,8 @@ func shake() -> void:
 
 
 func on_player_hit(_lives:int) -> void:
-	shake()
+	if _lives < GameManager.TOTAL_LIVES:
+		shake()
 
 
 func reset_camera() -> void:

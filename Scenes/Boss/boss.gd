@@ -7,7 +7,7 @@ const HIT_CONDITION:String = "parameters/conditions/on_hit"
 @onready var visual = $Visual
 
 @export var lives:int = 2
-@export var points:int = 5
+@export var points:int = ScoreManager.BOSS_POINTS
 
 var _invincible:bool = false
 
