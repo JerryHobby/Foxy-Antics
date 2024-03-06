@@ -34,11 +34,17 @@ var SOUNDS = {
 
 
 func play_clip(player: AudioStreamPlayer2D, clip_key: String):
+	
+	var start:float = 0.0
+	
 	if GameManager.sounds == false:
 		return
 		
 	if SOUNDS.has(clip_key) == false:
 		return
-	print("Sound: %s" % SOUNDS[clip_key])
+
+	if clip_key == SOUND_PICKUP:
+		start = 0.17
+		
 	player.stream = SOUNDS[clip_key]
-	player.play()
+	player.play(start)

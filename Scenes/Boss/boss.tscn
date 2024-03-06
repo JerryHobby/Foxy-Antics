@@ -7,7 +7,7 @@
 size = Vector2(28, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1p5p"]
-size = Vector2(20, 294)
+size = Vector2(20, 231)
 
 [sub_resource type="Animation" id="Animation_pe86w"]
 length = 0.001
@@ -273,7 +273,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_5klor")
 
 [node name="HitBox" type="Area2D" parent="Visual"]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visual/HitBox"]
@@ -285,7 +285,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
-position = Vector2(-100, -117)
+position = Vector2(-79, -85)
+scale = Vector2(1, 0.720001)
 shape = SubResource("RectangleShape2D_t1p5p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

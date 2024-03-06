@@ -6,6 +6,7 @@ extends Control
 @onready var h_box_hearts = $MCScoreBar/HBoxHearts
 @onready var score_label = $MCScoreBar/HBoxScore/ScoreLabel
 @onready var label_god_mode = $MCScoreBar/HBoxScore/LabelGodMode
+@onready var sound = $Sound
 
 
 var _hearts:Array
@@ -22,7 +23,7 @@ func _ready():
 	on_score_updated()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if vb_level_complete.visible == true:
 		if Input.is_action_just_pressed("jump"):
 			hide_hud()
@@ -67,4 +68,5 @@ func on_level_complete():
 
 func on_game_over():
 	vb_game_over.show()
+	SoundManager.play_clip(sound, SoundManager.SOUND_GAMEOVER)
 	show_hud()

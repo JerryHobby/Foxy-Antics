@@ -2,6 +2,7 @@ extends Node2D
 
 const TRIGGER_CONDITION:String = "parameters/conditions/on_trigger"
 const HIT_CONDITION:String = "parameters/conditions/on_hit"
+@onready var hit_box = $Visual/HitBox
 
 @onready var animation_tree = $AnimationTree
 @onready var visual = $Visual
@@ -10,6 +11,7 @@ const HIT_CONDITION:String = "parameters/conditions/on_hit"
 @export var points:int = ScoreManager.BOSS_POINTS
 
 var _invincible:bool = false
+var _has_triggered = false
 
 
 func tween_hit() -> void:
@@ -43,11 +45,14 @@ func set_invincible(value:bool) -> void:
 
 
 func _on_trigger_area_entered(_area):
+	_has_triggered = true
+	hit_box.collision_layer = 4
 	if animation_tree[TRIGGER_CONDITION] == false:
 		animation_tree[TRIGGER_CONDITION] = true
 
 
 func _on_hit_box_area_entered(_area):
-	take_damage()
+	if _has_triggered:
+		take_damage()
 
 

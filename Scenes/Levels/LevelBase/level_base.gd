@@ -1,7 +1,6 @@
 extends Node2D
 @onready var player_cam = $PlayerCam
 @onready var player = $Player
-@onready var exit_barrier = $ExitBarrier
 @onready var music = $Music
 
 var _level_accelerator:float
@@ -28,7 +27,7 @@ func _process(_delta):
 
 
 func on_boss_killed(_p) -> void:
-	exit_barrier.queue_free()
+	#exit_barrier.queue_free()
 	pass
 
 

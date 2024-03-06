@@ -1,10 +1,47 @@
-[gd_scene load_steps=76 format=3 uid="uid://dwj8hrmi4db4k"]
+[gd_scene load_steps=82 format=3 uid="uid://dwj8hrmi4db4k"]
 
 [ext_resource type="Script" path="res://Scenes/BonusItems/bonus_items.gd" id="1_tc02o"]
+[ext_resource type="Texture2D" uid="uid://brto6ngbwyy5t" path="res://assets/items/gold_ring.png" id="2_80b61"]
 [ext_resource type="Texture2D" uid="uid://bbivwsoa8ia8h" path="res://assets/items/Bananas.png" id="2_bse4j"]
 [ext_resource type="Texture2D" uid="uid://duxg0eto70vd5" path="res://assets/items/Cherries.png" id="3_c6a54"]
 [ext_resource type="Texture2D" uid="uid://dugu4y6k2cahx" path="res://assets/items/Kiwi.png" id="4_cm2jj"]
 [ext_resource type="Texture2D" uid="uid://beo1tww8f24pj" path="res://assets/items/Melon.png" id="5_s77lj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b53n"]
+atlas = ExtResource("2_80b61")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jhil"]
+atlas = ExtResource("2_80b61")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cjgs"]
+atlas = ExtResource("2_80b61")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glmee"]
+atlas = ExtResource("2_80b61")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_be2tp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b53n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jhil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cjgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glmee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55oi3"]
 atlas = ExtResource("2_bse4j")
@@ -512,15 +549,24 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_tc02o")
 
+[node name="Gold Ring" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_be2tp")
+autoplay = "default"
+frame_progress = 0.243732
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_lik02")
 animation = &"banana"
 frame = 6
 frame_progress = 0.442826
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_he72y")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

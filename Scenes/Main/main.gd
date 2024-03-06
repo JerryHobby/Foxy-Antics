@@ -15,8 +15,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("jump"):
+func _process(_delta):
+	if Input.is_action_just_pressed("start"):
 		GameManager.load_next_level_scene()
 
 	if Input.is_action_just_pressed("escape"):

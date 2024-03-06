@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://0voo6767wt3s"]
+[gd_scene load_steps=9 format=3 uid="uid://0voo6767wt3s"]
 
 [ext_resource type="Texture2D" uid="uid://canumk1i8cvrc" path="res://assets/backgrounds/platformer_background_4.png" id="1_1s7b8"]
 [ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_apg8k"]
 [ext_resource type="LabelSettings" uid="uid://bevadlt1a6a84" path="res://assets/lg_96_blue.tres" id="2_s4bgn"]
 [ext_resource type="FontFile" uid="uid://wqngsxortibx" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_4fc2a"]
 [ext_resource type="AudioStream" uid="uid://b2e0rac3ftxda" path="res://assets/sound/Farm Frolics.ogg" id="4_exipn"]
+[ext_resource type="FontFile" uid="uid://cklm7castq6h8" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="6_c0mqv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j7q30"]
 font = ExtResource("3_4fc2a")
@@ -14,6 +15,10 @@ outline_size = 3
 outline_color = Color(0.027451, 0.917647, 0.564706, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.827451)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ycwhd"]
+font = ExtResource("6_c0mqv")
+font_size = 27
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_apg8k")
@@ -54,3 +59,27 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_exipn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.0
+offset_top = 20.0
+offset_right = -19.0
+offset_bottom = 141.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 0.278431)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 175.0
+offset_bottom = 108.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+text = "Start: SPACE
+Reset HS: ESC
+God: G [in game]"
+label_settings = SubResource("LabelSettings_ycwhd")

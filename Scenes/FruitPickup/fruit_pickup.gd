@@ -37,14 +37,14 @@ func _process(delta):
 
 
 func kill_me() -> void:
-	visible = false
-	sound.finished.connect(queue_free)
+	queue_free()
 
 
 func _on_area_entered(_area):
 	SignalManager.on_pickup_hit.emit(POINTS)
 	SoundManager.play_clip(sound, SoundManager.SOUND_PICKUP)
-	kill_me()
+	visible = false
+	sound.finished.connect(kill_me)
 
 
 func _on_life_timer_timeout():

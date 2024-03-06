@@ -10,13 +10,14 @@ class_name Player
 @onready var animation_player_invincible = $AnimationPlayerInvincible
 @onready var invincible_timer = $InvincibleTimer
 @onready var hurt_timer = $HurtTimer
+@onready var hit_box = $HitBox
 
-const GRAVITY:float = 1000.0
+const GRAVITY:float = 690.0
 const FALLEN_OFF:float = 100
-const RUN_SPEED:float = 120
+const RUN_SPEED:float = 70
 const MAX_FALL_SPEED:float = 400.0
-const JUMP_VELOCITY:float = -350.0
-const HURT_JUMP_VELOCITY:Vector2 = Vector2(0, -150)
+const JUMP_VELOCITY:float = -300.0
+const HURT_JUMP_VELOCITY:Vector2 = Vector2(0, -130)
 
 
 enum PLAYER_STATE {IDLE, RUN, JUMP, FALL, HURT}
@@ -47,16 +48,17 @@ func _physics_process(delta):
 
 
 func get_input() -> void:
-	if _state == PLAYER_STATE.HURT:
-		return
+	#if _state == PLAYER_STATE.HURT:
+		#return
 		
 	#if _invincible:
 		#return
-	#
+	
 	velocity.x = 0
 
 	if Input.is_action_just_pressed("god_mode"):
 		GameManager.set_god_mode(!GameManager.get_god_mode())
+		
 	if Input.is_action_just_pressed("debug"):
 		debug_label.visible = !debug_label.visible
 
@@ -138,6 +140,9 @@ func fallen_off() -> void:
 
 
 func reduce_lives() -> bool:
+	if GameManager.get_god_mode():
+		return true
+
 	var lives = GameManager.get_lives_remaining() - 1
 	GameManager.set_lives_remaining(lives)
 	SignalManager.on_player_hit.emit(lives)
@@ -159,9 +164,6 @@ func apply_hit() -> void:
 	if _invincible == true:
 		return
 	
-	if GameManager.get_god_mode():
-		return
-		
 	if reduce_lives() == false: #dead
 		return
 		
@@ -169,6 +171,14 @@ func apply_hit() -> void:
 	SoundManager.play_clip(sound_player, SoundManager.SOUND_DAMAGE)
 	set_state(PLAYER_STATE.HURT)
 	#global_position = _reset_position
+
+
+func retake_damage() -> void:
+	for area in hit_box.get_overlapping_areas():
+		if area.is_in_group("Dangers"):
+			apply_hit()
+			break
+	return
 
 
 func _on_hit_box_area_entered(_area):
@@ -179,6 +189,7 @@ func _on_invincible_timer_timeout():
 	animation_player_invincible.stop()
 	animation_player_invincible.play("RESET")
 	_invincible = false
+	retake_damage()
 
 
 func _on_hurt_timer_timeout():

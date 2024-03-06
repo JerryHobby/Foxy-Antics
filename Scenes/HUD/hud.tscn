@@ -163,3 +163,5 @@ text = "Press Jump For Main Menu"
 label_settings = ExtResource("4_kmydm")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
