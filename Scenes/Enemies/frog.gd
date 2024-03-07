@@ -3,7 +3,7 @@ extends EnemyBase
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var jump_timer = $JumpTimer
 
-const JUMP_VELOCITY:Vector2 = Vector2(100, -150)
+const JUMP_VELOCITY:Vector2 = Vector2(100, -225)
 const JUMP_WAIT_RANGE:Vector2 = Vector2(2.5, 5.0)
 
 var _jump:bool = false

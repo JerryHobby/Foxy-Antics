@@ -30,6 +30,7 @@ func _ready():
 	_reset_position = global_position
 	SignalManager.on_checkpoint.connect(on_checkpoint)
 	SignalManager.on_player_hit.emit(GameManager.get_lives_remaining())
+	SignalManager.on_jump_spring.connect(on_jump_spring)
 
 	
 func _physics_process(delta):
@@ -198,3 +199,8 @@ func _on_hurt_timer_timeout():
 
 func on_checkpoint(_position):
 	_reset_position = global_position
+
+
+func on_jump_spring(jump_velocity:Vector2) -> void:
+	velocity = jump_velocity
+	move_and_slide()

@@ -76,6 +76,5 @@ shape = SubResource("CapsuleShape2D_5vhcl")
 speed = 80.0
 life_span = 20.0
 bullet_key = 1
-shoot_delay = 1.0
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]

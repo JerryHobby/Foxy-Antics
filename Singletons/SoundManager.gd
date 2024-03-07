@@ -14,6 +14,7 @@ const SOUND_PICKUP = "pickup"
 const SOUND_BOSS_ARRIVE = "boss_arrive"
 const SOUND_JUMP = "jump"
 const SOUND_WIN = "win"
+const SOUND_BOING = "boing"
 
 
 var SOUNDS = {
@@ -29,7 +30,8 @@ var SOUNDS = {
 	SOUND_MUSIC2: preload("res://assets/sound/Flowing Rocks.ogg"),
 	SOUND_PICKUP: preload("res://assets/sound/pickup3.ogg"),
 	SOUND_BOSS_ARRIVE: preload("res://assets/sound/boss_arrive.wav"),
-	SOUND_WIN: preload("res://assets/sound/you_win.ogg")
+	SOUND_WIN: preload("res://assets/sound/you_win.ogg"),
+	SOUND_BOING: preload("res://assets/sound/boing1.mp3")
 }
 
 

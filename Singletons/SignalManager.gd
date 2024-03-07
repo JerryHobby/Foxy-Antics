@@ -9,3 +9,5 @@ signal on_level_complete
 signal on_game_over
 signal on_score_updated
 signal on_god_mode(mode:bool)
+signal on_jump_spring(jump_velocity:Vector2)
+
