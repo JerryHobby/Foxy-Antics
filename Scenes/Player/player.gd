@@ -38,9 +38,11 @@ func _physics_process(delta):
 	
 	if is_on_floor() == false:
 		velocity.y += GRAVITY * delta
+		#velocity.x += GRAVITY * delta * velocity.x
 
 	get_input()
 	move_and_slide()
+	
 	calculate_state()
 	var statetxt = PLAYER_STATE.find_key(_state)
 	debug_label.text = \

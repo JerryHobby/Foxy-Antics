@@ -26,7 +26,7 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_gqedp"]
 _data = {
-"points": PackedVector2Array(-0.0206284, 0.026897, 0.0206284, -0.026897, 432, -249, 0.129643, 0.068656, -0.129643, -0.068656, 432, -26, 0, 0, 0, 0, 432, -249)
+"points": PackedVector2Array(-0.0206284, 0.026897, 0.0206284, -0.026897, 431, -232, 0.129643, 0.068656, -0.129643, -0.068656, 431, -55, 0, 0, 0, 0, 431, -232)
 }
 point_count = 3
 
@@ -52,79 +52,103 @@ position = Vector2(194, -219)
 [node name="BonusItems" parent="BonusRings" index="0" instance=ExtResource("6_6cw5c")]
 position = Vector2(98, -500)
 
-[node name="BonusItems18" parent="BonusRings" index="1" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems27" parent="BonusRings" index="1" instance=ExtResource("6_6cw5c")]
+position = Vector2(623, -210)
+
+[node name="BonusItems28" parent="BonusRings" index="2" instance=ExtResource("6_6cw5c")]
+position = Vector2(603, -252)
+
+[node name="BonusItems29" parent="BonusRings" index="3" instance=ExtResource("6_6cw5c")]
+position = Vector2(579, -296)
+
+[node name="BonusItems30" parent="BonusRings" index="4" instance=ExtResource("6_6cw5c")]
+position = Vector2(557, -334)
+
+[node name="BonusItems31" parent="BonusRings" index="5" instance=ExtResource("6_6cw5c")]
+position = Vector2(538, -371)
+
+[node name="BonusItems32" parent="BonusRings" index="6" instance=ExtResource("6_6cw5c")]
+position = Vector2(514, -410)
+
+[node name="BonusItems33" parent="BonusRings" index="7" instance=ExtResource("6_6cw5c")]
+position = Vector2(494, -447)
+
+[node name="BonusItems34" parent="BonusRings" index="8" instance=ExtResource("6_6cw5c")]
+position = Vector2(468, -486)
+
+[node name="BonusItems18" parent="BonusRings" index="9" instance=ExtResource("6_6cw5c")]
 position = Vector2(289, -299)
 
-[node name="BonusItems24" parent="BonusRings" index="2" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems24" parent="BonusRings" index="10" instance=ExtResource("6_6cw5c")]
 position = Vector2(289, -322)
 
-[node name="BonusItems25" parent="BonusRings" index="3" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems25" parent="BonusRings" index="11" instance=ExtResource("6_6cw5c")]
 position = Vector2(289, -345)
 
-[node name="BonusItems26" parent="BonusRings" index="4" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems26" parent="BonusRings" index="12" instance=ExtResource("6_6cw5c")]
 position = Vector2(289, -368)
 
-[node name="BonusItems2" parent="BonusRings" index="5" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems2" parent="BonusRings" index="13" instance=ExtResource("6_6cw5c")]
 position = Vector2(115, -583)
 
-[node name="BonusItems3" parent="BonusRings" index="6" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems3" parent="BonusRings" index="14" instance=ExtResource("6_6cw5c")]
 position = Vector2(49, -434)
 
-[node name="BonusItems4" parent="BonusRings" index="7" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems4" parent="BonusRings" index="15" instance=ExtResource("6_6cw5c")]
 position = Vector2(49, -386)
 
-[node name="BonusItems5" parent="BonusRings" index="8" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems5" parent="BonusRings" index="16" instance=ExtResource("6_6cw5c")]
 position = Vector2(117, -211)
 
-[node name="BonusItems19" parent="BonusRings" index="9" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems19" parent="BonusRings" index="17" instance=ExtResource("6_6cw5c")]
 position = Vector2(143, -100)
 
-[node name="BonusItems20" parent="BonusRings" index="10" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems20" parent="BonusRings" index="18" instance=ExtResource("6_6cw5c")]
 position = Vector2(162, -100)
 
-[node name="BonusItems21" parent="BonusRings" index="11" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems21" parent="BonusRings" index="19" instance=ExtResource("6_6cw5c")]
 position = Vector2(181, -100)
 
-[node name="BonusItems22" parent="BonusRings" index="12" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems22" parent="BonusRings" index="20" instance=ExtResource("6_6cw5c")]
 position = Vector2(200, -100)
 
-[node name="BonusItems23" parent="BonusRings" index="13" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems23" parent="BonusRings" index="21" instance=ExtResource("6_6cw5c")]
 position = Vector2(218, -100)
 
-[node name="BonusItems6" parent="BonusRings" index="14" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems6" parent="BonusRings" index="22" instance=ExtResource("6_6cw5c")]
 position = Vector2(49, -338)
 
-[node name="BonusItems7" parent="BonusRings" index="15" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems7" parent="BonusRings" index="23" instance=ExtResource("6_6cw5c")]
 position = Vector2(49, -291)
 
-[node name="BonusItems8" parent="BonusRings" index="16" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems8" parent="BonusRings" index="24" instance=ExtResource("6_6cw5c")]
 position = Vector2(49, -243)
 
-[node name="BonusItems9" parent="BonusRings" index="17" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems9" parent="BonusRings" index="25" instance=ExtResource("6_6cw5c")]
 position = Vector2(147, -581)
 
-[node name="BonusItems16" parent="BonusRings" index="18" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems16" parent="BonusRings" index="26" instance=ExtResource("6_6cw5c")]
 position = Vector2(160, -572)
 
-[node name="BonusItems17" parent="BonusRings" index="19" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems17" parent="BonusRings" index="27" instance=ExtResource("6_6cw5c")]
 position = Vector2(131, -585)
 
-[node name="BonusItems10" parent="BonusRings" index="20" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems10" parent="BonusRings" index="28" instance=ExtResource("6_6cw5c")]
 position = Vector2(210, -515)
 
-[node name="BonusItems11" parent="BonusRings" index="21" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems11" parent="BonusRings" index="29" instance=ExtResource("6_6cw5c")]
 position = Vector2(210, -466)
 
-[node name="BonusItems12" parent="BonusRings" index="22" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems12" parent="BonusRings" index="30" instance=ExtResource("6_6cw5c")]
 position = Vector2(210, -419)
 
-[node name="BonusItems13" parent="BonusRings" index="23" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems13" parent="BonusRings" index="31" instance=ExtResource("6_6cw5c")]
 position = Vector2(210, -370)
 
-[node name="BonusItems14" parent="BonusRings" index="24" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems14" parent="BonusRings" index="32" instance=ExtResource("6_6cw5c")]
 position = Vector2(210, -323)
 
-[node name="BonusItems15" parent="BonusRings" index="25" instance=ExtResource("6_6cw5c")]
+[node name="BonusItems15" parent="BonusRings" index="33" instance=ExtResource("6_6cw5c")]
 position = Vector2(210, -275)
 
 [node name="FloorSpikes" type="Node2D" parent="." index="9"]
@@ -167,33 +191,19 @@ position = Vector2(403, -42)
 [node name="Marker2" type="Marker2D" parent="Moving Platforms/Platform1" index="2"]
 position = Vector2(403, -533)
 
-[node name="Platform2" type="Node" parent="Moving Platforms" index="1"]
-
-[node name="MovingPlatform" parent="Moving Platforms/Platform2" index="0" node_paths=PackedStringArray("p1", "p2") instance=ExtResource("6_jjqh0")]
-position = Vector2(453, -533)
-p1 = NodePath("../Marker1")
-p2 = NodePath("../Marker2")
-speed = 70.0
-
-[node name="Marker1" type="Marker2D" parent="Moving Platforms/Platform2" index="1"]
-position = Vector2(450, -533)
-
-[node name="Marker2" type="Marker2D" parent="Moving Platforms/Platform2" index="2"]
-position = Vector2(519, -534)
-
-[node name="Platform3" type="Node" parent="Moving Platforms" index="2"]
+[node name="Platform3" type="Node" parent="Moving Platforms" index="1"]
 
 [node name="MovingPlatform" parent="Moving Platforms/Platform3" index="0" node_paths=PackedStringArray("p1", "p2") instance=ExtResource("6_jjqh0")]
 position = Vector2(553, -534)
 p1 = NodePath("../Marker1")
 p2 = NodePath("../Marker2")
-speed = 70.0
+speed = 80.0
 
 [node name="Marker1" type="Marker2D" parent="Moving Platforms/Platform3" index="1"]
-position = Vector2(553, -534)
+position = Vector2(447, -534)
 
 [node name="Marker2" type="Marker2D" parent="Moving Platforms/Platform3" index="2"]
-position = Vector2(656, -403)
+position = Vector2(653, -147)
 
 [node name="JumpSprings" type="Node2D" parent="." index="12"]
 
@@ -202,46 +212,45 @@ position = Vector2(290, -58)
 scale = Vector2(0.25, 0.25)
 jump_velocity = Vector2(2.08165e-12, -14000)
 
-[node name="JumpSpringangle" parent="JumpSprings" index="1" instance=ExtResource("7_tictx")]
-position = Vector2(661, -482)
-rotation = -0.514151
-scale = Vector2(0.561606, 0.375845)
-jump_velocity = Vector2(6000, -3000)
-
-[node name="JumpSpring2" parent="JumpSprings" index="2" instance=ExtResource("7_tictx")]
+[node name="JumpSpring2" parent="JumpSprings" index="1" instance=ExtResource("7_tictx")]
 position = Vector2(257, -129)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -3000)
 
-[node name="JumpSpring3" parent="JumpSprings" index="3" instance=ExtResource("7_tictx")]
+[node name="JumpSpring3" parent="JumpSprings" index="2" instance=ExtResource("7_tictx")]
 position = Vector2(321, -177)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -2000)
 
-[node name="JumpSpring4" parent="JumpSprings" index="4" instance=ExtResource("7_tictx")]
+[node name="JumpSpring4" parent="JumpSprings" index="3" instance=ExtResource("7_tictx")]
 position = Vector2(674, -17)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -5000)
 
+[node name="JumpSpring5" parent="JumpSprings" index="4" instance=ExtResource("7_tictx")]
+position = Vector2(209, -257)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(8000, -200)
+
 [node name="JumpingBridge" type="Node2D" parent="JumpSprings" index="5"]
 
 [node name="JumpSpring7" parent="JumpSprings/JumpingBridge" index="0" instance=ExtResource("7_tictx")]
-position = Vector2(421, -17)
+position = Vector2(417, -17)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -100)
 
 [node name="JumpSpring8" parent="JumpSprings/JumpingBridge" index="1" instance=ExtResource("7_tictx")]
-position = Vector2(407, -17)
+position = Vector2(404, -17)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -100)
 
 [node name="JumpSpring9" parent="JumpSprings/JumpingBridge" index="2" instance=ExtResource("7_tictx")]
-position = Vector2(393, -17)
+position = Vector2(391, -17)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -100)
 
 [node name="JumpSpring10" parent="JumpSprings/JumpingBridge" index="3" instance=ExtResource("7_tictx")]
-position = Vector2(379, -17)
+position = Vector2(378, -17)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -100)
 
@@ -251,9 +260,62 @@ scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -100)
 
 [node name="JumpSpring12" parent="JumpSprings/JumpingBridge" index="5" instance=ExtResource("7_tictx")]
-position = Vector2(351, -17)
+position = Vector2(352, -17)
 scale = Vector2(0.1, 0.1)
 jump_velocity = Vector2(2.08165e-12, -100)
+
+[node name="JumpingBridge2" type="Node2D" parent="JumpSprings" index="6"]
+position = Vector2(-105, -515)
+
+[node name="JumpSpring12" parent="JumpSprings/JumpingBridge2" index="0" instance=ExtResource("7_tictx")]
+position = Vector2(351, -17)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring11" parent="JumpSprings/JumpingBridge2" index="1" instance=ExtResource("7_tictx")]
+position = Vector2(365, -14)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring10" parent="JumpSprings/JumpingBridge2" index="2" instance=ExtResource("7_tictx")]
+position = Vector2(379, -11)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring9" parent="JumpSprings/JumpingBridge2" index="3" instance=ExtResource("7_tictx")]
+position = Vector2(393, -8)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring8" parent="JumpSprings/JumpingBridge2" index="4" instance=ExtResource("7_tictx")]
+position = Vector2(407, -5)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring7" parent="JumpSprings/JumpingBridge2" index="5" instance=ExtResource("7_tictx")]
+position = Vector2(421, -5)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring13" parent="JumpSprings/JumpingBridge2" index="6" instance=ExtResource("7_tictx")]
+position = Vector2(477, -17)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring14" parent="JumpSprings/JumpingBridge2" index="7" instance=ExtResource("7_tictx")]
+position = Vector2(463, -14)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring15" parent="JumpSprings/JumpingBridge2" index="8" instance=ExtResource("7_tictx")]
+position = Vector2(449, -11)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
+
+[node name="JumpSpring16" parent="JumpSprings/JumpingBridge2" index="9" instance=ExtResource("7_tictx")]
+position = Vector2(435, -8)
+scale = Vector2(0.1, 0.1)
+jump_velocity = Vector2(2.08165e-12, -80)
 
 [node name="Snails" type="Node2D" parent="." index="13"]
 
@@ -317,8 +379,9 @@ position = Vector2(12, -5)
 curve = SubResource("Curve2D_gqedp")
 
 [node name="BallSpikes" parent="BallSpikes/Ball3/Path2D" index="0" instance=ExtResource("10_5pxh3")]
-position = Vector2(432, -249)
+position = Vector2(431, -232)
 rotation = -0.916583
+scale = Vector2(2.34695, 2.34695)
 speed = 0.15
 
 [node name="Frogs" type="Node2D" parent="." index="16"]

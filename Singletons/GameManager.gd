@@ -6,7 +6,7 @@ var music:bool = false
 var sounds:bool = true
 var _god_mode:bool = false
 
-const TOTAL_LEVELS = 4
+const TOTAL_LEVELS = 1
 const TOTAL_LIVES = 5
 
 # accelerates game based on level number
